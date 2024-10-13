@@ -6,7 +6,7 @@ const { x, y } = useMouse();
   <div>
     <div
       :class="[
-        'absolute bg-slate-600/20 rounded-full z-50',
+        'hidden sm:block absolute bg-slate-600/20 rounded-full z-50',
         '-translate-x-1/2 -translate-y-1/2 pointer-events-none blur-3xl',
       ]"
       :style="{
@@ -17,7 +17,7 @@ const { x, y } = useMouse();
       }"
     />
 
-    <div class="absolute inset-0 z-0">
+    <div class="hidden sm:block absolute inset-0 z-0">
       <div
         class="absolute top-0 -left-4 w-72 h-72 bg-orange-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
       ></div>

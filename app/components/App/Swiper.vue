@@ -35,7 +35,7 @@ slides.value = slides.value.map((slide, index) => ({
     <!-- Swiper controls instructions -->
     <div
       :class="[
-        'opacity-0', // for animation
+        'hidden sm:block opacity-0', // for animation
         'fixed bottom-8 left-5 flex flex-col items-start text-slate-300 transition-opacity duration-500 z-10',
       ]"
       v-motion

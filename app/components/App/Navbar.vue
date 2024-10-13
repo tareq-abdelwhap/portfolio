@@ -9,8 +9,9 @@ const { slides, activeSlide } = storeToRefs(SwiperStore);
   <div class="absolute flex top-5 -translate-x-1/2 left-1/2 z-10">
     <ul
       :class="[
-        'flex gap-5 text-center px-3 py-2 rounded-full',
+        'flex gap-2 sm:gap-5 text-center px-2 sm:px-3 py-2 rounded-full',
         'bg-white bg-opacity-5 backdrop-blur-md shadow-lg',
+        'overflow-x-auto sm:overflow-x-visible whitespace-nowrap',
       ]"
       v-motion
       :initial="{ y: -70 }"
@@ -20,8 +21,8 @@ const { slides, activeSlide } = storeToRefs(SwiperStore);
         v-for="(slide, index) in slides"
         :key="index"
         :class="[
-          'cursor-pointer text-lg rounded-full',
-          'hover:text-slate-300 px-3',
+          'cursor-pointer text-xs sm:text-sm md:text-lg rounded-full',
+          'hover:text-slate-300 px-2 sm:px-3',
           'transition-[color transform] duration-200 ease-in-out',
           'flex items-center justify-center',
           activeSlide === index
@@ -35,7 +36,9 @@ const { slides, activeSlide } = storeToRefs(SwiperStore);
     </ul>
 
     <ul
-      :class="['absolute -end-16 flex text-center px-1 py-2 rounded-full', '']"
+      :class="[
+        'absolute -end-16 hidden sm:flex text-center px-1 py-2 rounded-full',
+      ]"
       v-motion
       :initial="{ y: -70 }"
       :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
